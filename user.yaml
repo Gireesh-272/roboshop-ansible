@@ -11,17 +11,6 @@
       name: nodejs
       state: present
 
-
-db.users.remove({ name: "user" });
-
-db.users.insert({
-  name: "user",
-  password: "password",
-  email: "user@me.com"
-});
-
-  
-
   - name: creat roboshop user
     ansible.builtin.user:
       name: roboshop
@@ -72,7 +61,7 @@ db.users.insert({
       state: present
 
   - name: load schema
-    ansible.builtin.command: mongo --host mongodb.blackranger.xyz --eval "load('/app/schema/user.js')"
+    ansible.builtin.shell: mongo --host MONGODB-SERVER-IPADDRESS </app/schema/user.js
 
 
   - name: catlogue service enable and start

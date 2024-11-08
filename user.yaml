@@ -61,7 +61,7 @@
       state: present
 
   - name: load schema
-    ansible.builtin.shell: mongo --host MONGODB-SERVER-IPADDRESS </app/schema/user.js
+    ansible.builtin.shell: mongo --host mongodb.blackranger.xyz < /app/schema/user.js
 
 
   - name: catlogue service enable and start

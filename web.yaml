@@ -7,6 +7,12 @@
       name: nginx
       state: present
 
+  - name: nginx service enable and start
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
+
   - name: remove html directory
     ansible.builtin.file:
       path: /usr/share/nginx/html
@@ -33,11 +39,7 @@
       src: roboshop.conf
       dest: /etc/nginx/default.d/roboshop.conf 
 
-  - name: nginx service enable and start
-    ansible.builtin.service:
-      name: nginx
-      state: started
-      enabled: yes
+
 
 
       

@@ -11,6 +11,17 @@
       name: nodejs
       state: present
 
+
+db.users.remove({ name: "user" });
+
+db.users.insert({
+  name: "user",
+  password: "password",
+  email: "user@me.com"
+});
+
+  
+
   - name: creat roboshop user
     ansible.builtin.user:
       name: roboshop

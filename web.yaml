@@ -9,12 +9,12 @@
 
   - name: remove html directory
     ansible.builtin.file:
-      path:  /usr/share/nginx/html
+      path: /usr/share/nginx/html
       state: absent
 
   - name: create html directory
     ansible.builtin.file:
-      path:  /usr/share/nginx/html
+      path: /usr/share/nginx/html
       state: directory
 
   - name: downloading web file
@@ -36,5 +36,5 @@
   - name: nginx service enable and start
     ansible.builtin.service:
       name: nginx
-      state: restarted
+      state: started
       enabled: yes
